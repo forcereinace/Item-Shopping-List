@@ -23,7 +23,6 @@ public class useMouse
             @Override
             public void mouseMoved(MouseEvent e) 
             {
-                System.out.println("Mouse Moved");
             }
         });
     }

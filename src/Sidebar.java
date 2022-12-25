@@ -1,4 +1,5 @@
-package src;
+package src; // To told the java program that this file can be access via "import src.*"
+
 import javax.swing.JPanel;
 import javax.swing.JComponent;
 import javax.swing.JButton;
