@@ -27,6 +27,8 @@ public class Window
 
     public void insertJPanel(String name, JPanel panel)
     {
+        if(namelist.contains(name))
+            return ;
         map.put(name, panel);
         namelist.add(name);
     }
