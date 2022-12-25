@@ -1,3 +1,4 @@
+package src;
 public class Data {
     private String name;
     private String cat;

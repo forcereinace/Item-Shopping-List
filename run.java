@@ -1,4 +1,13 @@
 import javax.swing.JPanel;      // JPanel for the JFrame
+
+import src.About;
+import src.Category;
+import src.DatabaseManager;
+import src.Item;
+import src.Listt;
+import src.Sidebar;
+import src.Window;
+
 import javax.swing.ImageIcon;   // To set the background image
 import javax.swing.JButton;     // For the buttons
 import javax.swing.JComponent;  // Able to store components from javax

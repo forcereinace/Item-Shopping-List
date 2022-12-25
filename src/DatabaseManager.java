@@ -1,3 +1,4 @@
+package src;
 import java.io.File;
 
 import java.util.HashMap;
@@ -8,7 +9,7 @@ public class DatabaseManager {
     static HashMap<String, ArrayList<Data>> category = new HashMap<>();
     static ArrayList<String> catName = new ArrayList<>();
 
-    DatabaseManager() 
+    public DatabaseManager() 
     {
         if (category.isEmpty()) {
             gatherDataFromFolder();
