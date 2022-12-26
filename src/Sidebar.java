@@ -7,10 +7,10 @@ import javax.swing.JButton;
 import java.util.ArrayList;
 
 public class Sidebar {
+    // only for the burger button first initialization
+    static boolean closeB = false;
     public Sidebar(JPanel panel)
     {
-        // only for the burger button first initialization
-        boolean closeB = false;
         // store all the components
         ArrayList<JComponent> components = new ArrayList<>();
         // JFrame and JPanel manager
@@ -53,7 +53,6 @@ public class Sidebar {
         {
             close.setText("-->");
             close.setBounds(100, 0, 70, 50);
-            closeB = !closeB;
         }
         close.addActionListener((e) ->
         {
@@ -62,6 +61,7 @@ public class Sidebar {
             {
                 close.setBounds(0, 0, 70, 50);
                 close.setText("<--");
+                closeB = !closeB;
                 item.setVisible(false);
                 list.setVisible(false);
                 cat.setVisible(false);
@@ -70,6 +70,7 @@ public class Sidebar {
             {
                 close.setBounds(100, 0, 70, 50);
                 close.setText("-->");
+                closeB = !closeB;
                 item.setVisible(true);
                 list.setVisible(true);
                 cat.setVisible(true);
@@ -81,7 +82,7 @@ public class Sidebar {
         for(JComponent a : components)
             panel.add(a);
         panel.setLayout(null);
-        panel.setBounds(0, 0, 100, 500);
+        panel.setBounds(0, 0, 200, 500);
 
     }
 }
