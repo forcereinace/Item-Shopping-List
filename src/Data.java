@@ -1,10 +1,11 @@
-package src;
+package src; // To told the java program that this file can be access via "import src.*"
+
 public class Data {
     private String name;
     private String cat;
     private int quantity;
 
-    public Data(String name, int quantity, String category) {
+    public Data(String name, String category, int quantity) {
         this.name = name;
         this.quantity = quantity;
         cat = category;

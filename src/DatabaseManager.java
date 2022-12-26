@@ -1,4 +1,5 @@
-package src;
+package src; // To told the java program that this file can be access via "import src.*"
+
 import java.io.File;
 
 import java.util.HashMap;
@@ -41,12 +42,30 @@ public class DatabaseManager {
         gatherDataFromFolder();
     }
 
+    public void insertData(Data a)
+    {
+        ArrayList<Data> cat = category.get(a.getCat());
+        cat.add(a);
+        category.put(a.getCat(), cat);
+    }
+
+    private void uploadDataToFile(ArrayList<Data> data)
+    {
+        
+    }
+
+    private void updateData()
+    {
+        
+    }
+
     private void gatherDataFromFolder() 
     {
         File folder = new File("Database/");
         for(File a : folder.listFiles())
         {
             String catType = a.getName();
+            catType = catType.substring(0, catType.length() - 4);
             ArrayList<Data> cat = new ArrayList<>();
             try
             {
@@ -61,7 +80,7 @@ public class DatabaseManager {
                     if(data[0].equalsIgnoreCase("quantity"))
                     {
                         quantity = Integer.parseInt(data[1]);
-                        cat.add(new Data(name, quantity, catType));
+                        cat.add(new Data(name, catType, quantity));
                     }
                 }
                 reading.close();

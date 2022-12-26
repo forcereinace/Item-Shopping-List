@@ -21,8 +21,9 @@ import javax.swing.Timer;       // Animation for the text
 import java.awt.Image;          // Store image 
 import java.awt.Graphics;       // Library to draw the background for Jpanel
 import java.awt.Color;          // Change color for the buttons
-
-import src.helper.useMouse;
+import java.awt.SystemTray;     // To show the icon in the taskbar (notification)
+import java.awt.TrayIcon;       // To show the icon in the taskbar (notification)
+import java.awt.Toolkit;        // To show the icon in the taskbar (notification)
 
 /*
  *  - Gather all the components in an ArrayList
@@ -43,7 +44,6 @@ public class run {
 
         JButton exit = new JButton("Exit");
         exit.setBounds(582, 408, 100, 50);
-        new useMouse(exit);
         exit.setBackground(Color.red);
         exit.addActionListener((e) ->
         {
@@ -95,6 +95,30 @@ public class run {
             ayatc2++;
         });
         timer.start();
+
+        if(SystemTray.isSupported())
+        {
+            Image icon = new ImageIcon("Image/icon2.png").getImage();
+            final TrayIcon trayIcon = new TrayIcon(icon, "Item Shopping List");
+            final SystemTray tray = SystemTray.getSystemTray();
+
+            trayIcon.setImageAutoSize(true);
+            trayIcon.addActionListener((e) -> {
+                win.toggleVisible();
+            });
+            try
+            {
+                tray.add(trayIcon);
+            }
+            catch(Exception e)
+            {
+                System.out.println("TrayIcon could not be added.");
+            }
+        }
+        else
+        {
+            System.out.println("SystemTray is not supported");
+        }
     }
     public static void main(String[] args) {
         /*

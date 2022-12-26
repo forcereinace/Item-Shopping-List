@@ -1,4 +1,5 @@
-package src;
+package src; // To told the java program that this file can be access via "import src.*"
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -26,6 +27,10 @@ public class Window
         frame.add(new JPanel()); // empty window
     }
 
+    public void toggleVisible()
+    {
+        frame.setVisible(!frame.isVisible());
+    }
     public void insertJPanel(String name, JPanel panel)
     {
         if(namelist.contains(name))
