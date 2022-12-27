@@ -3,14 +3,13 @@ package src; // To told the java program that this file can be access via "impor
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JComponent;
 import javax.swing.ImageIcon;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import src.helper.useMouse;
 
@@ -30,6 +29,14 @@ public class Category {
          * - Left 280, 90
          * - y-interval 80
          */
+
+        JLabel title = new JLabel("Category");
+        title.setBounds(350, 10, 200, 50);
+        // set the font to be bigger
+        title.setFont(title.getFont().deriveFont(30.0f));
+        title.setForeground(Color.white);
+        componenet.add(title);
+        new useMouse(title);
 
         for(i = 0; i < category.size(); i++)
         {
