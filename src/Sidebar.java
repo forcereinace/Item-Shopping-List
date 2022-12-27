@@ -19,9 +19,11 @@ public class Sidebar {
         ArrayList<JButton> side = new ArrayList<>();
         // JFrame and JPanel manager
         Window win = new Window();
-        
+
+        coord co = new coord(0, 0, 100, 51);
+
         JButton item = new JButton("Item");
-        item.setBounds(0, 0, 100, 51);
+        item.setBounds(0, co.getY(), 100, co.height);
         item.addActionListener((e) ->
         {
             win.switchJPanel("Item");
@@ -30,7 +32,7 @@ public class Sidebar {
         side.add(item);
         
         JButton list = new JButton("List");
-        list.setBounds(0, 50, 100, 51);
+        list.setBounds(0, co.getY(), 100, co.height);
         list.addActionListener((e) ->
         {
             win.switchJPanel("List");
@@ -39,7 +41,7 @@ public class Sidebar {
         side.add(list);
 
         JButton cat = new JButton("Categories");
-        cat.setBounds(0, 100, 100, 51);
+        cat.setBounds(0, co.getY(), 100, co.height);
         cat.addActionListener((e) ->
         {
             win.switchJPanel("Category");
@@ -48,7 +50,7 @@ public class Sidebar {
         side.add(cat);
 
         JButton home = new JButton("Main Menu");
-        home.setBounds(0, 150, 100, 50);
+        home.setBounds(0, co.getY(), 100, co.height);
         home.addActionListener((e) ->
         {
             win.switchJPanel("main");
@@ -103,7 +105,6 @@ public class Sidebar {
             a.setBorder(null);
             a.setFocusPainted(false);
             a.setRolloverEnabled(false);
-            a.addMouseListener(null);
         }
 
         for(JComponent a : components)
@@ -145,3 +146,24 @@ class mousss extends MouseAdapter
         button.setBackground(original);
     }    
 } 
+
+class coord
+{
+    public int x, y;
+    public int width, height;
+    
+    private int interval = 0;
+    coord(int x, int y, int width, int height)
+    {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.interval = height;
+    }
+    public int getY() {
+        int old = y;
+        y += interval;
+        return old;
+    }
+}
