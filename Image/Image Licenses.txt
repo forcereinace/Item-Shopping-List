@@ -1,1 +1,10 @@
-[back2.jpg] - <http://www.freepik.com"> Designed by Harryarts / Freepik
+[back2.jpg]  
+- <http://www.freepik.com"> 
+- Designed by Harryarts / Freepik
+
+[item4.jpg] 
+- https://www.freepik.com/free-vector/vector-3d-abstract-background-with-paper-cut-shapes-green-carving-art-paper-craft-landscape-with-gradient-fade-colors-minimalistic-design-layout-business-presentations-flyers-posters_22052634.htm#query=background%20form&position=32&from_view=search&track=sph"
+-Image by GarryKillian Freepik
+
+[cat.jpg]
+<a href="https://www.freepik.com/free-vector/gradient-abstract-blue-background-with-geometric-elements_26119317.htm#page=2&query=abstract%20background&position=13&from_view=keyword">Freepik</a>
